@@ -36,26 +36,25 @@
 		<dependency>
 			<groupId>io.quarkus</groupId>
 			<artifactId>quarkus-arc</artifactId>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>io.quarkus</groupId>
 			<artifactId>quarkus-hibernate-orm</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>io.quarkus</groupId>
 			<artifactId>quarkus-hibernate-validator</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.quarkus</groupId>
-			<artifactId>quarkus-jdbc-h2</artifactId>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.18.28</version>
-			<scope>runtime</scope>
+			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 </project>
