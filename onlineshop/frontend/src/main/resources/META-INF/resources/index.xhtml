@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="jakarta.faces.html">
+
+<h:head>
+    <title>Online Shop</title>
+    <h:outputStylesheet library="webjars" name="primeflex/3.3.1/primeflex.min.css"/>
+</h:head>
+
+<h:body>
+    <h2 class="col-10 text-3xl font-medium text-500">#{shopPresenter.shopname}</h2>
+
+    <h:form>
+        <p:inputText value="#{orderPresenter.customer}"/>
+        <p:dataTable value="#{shopPresenter.productes}" var="product">
+            <p:column headerText="Number">
+                <h:outputText value="#{product.number}"/>
+            </p:column>
+            <p:column headerText="Name">
+                <h:outputText value="#{product.name}"/>
+            </p:column>
+            <p:column headerText="origin">
+                <h:outputText value="#{product.price}"/>
+            </p:column>
+            <p:column headerText="calculated">
+                <h:outputText value="#{shopPresenter.calculatePrice(product.number)}"/>
+            </p:column>
+            <p:column>
+                <p:commandButton value="bestellen" action="#{orderPresenter.placeOrder(product.number)}" process="@form" update="@form"/>
+            </p:column>
+        </p:dataTable>
+        <h:messages id="messages" showDetail="true"/>
+    </h:form>
+</h:body>
+</html>

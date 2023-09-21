@@ -1,0 +1,9 @@
+app:
+  tenant: banana
+# Kompatiblität mit CDI Lite kann aktiviert werden, default: false
+quarkus:
+  arc:
+    strict-compatibility: false
+  rest-client:
+    "de.gedoplan.showcase.q3.rest.OrderResource":
+      url: http://localhost:8081

@@ -1,0 +1,11 @@
+quarkus:
+  datasource:
+    username: postgres
+    password: shop
+    jdbc:
+      url: jdbc:postgresql://localhost:5432/shop
+  hibernate-orm:
+    database:
+      generation: update
+  http:
+    port: 8081
